@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getMissions } from '../redux/missions/missionsSlice';
+import '../styles/Missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -11,22 +12,23 @@ const Missions = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Missions</h1>
+    <div className="missions">
       <table>
         <thead>
           <tr>
             <th>Mission</th>
             <th>Description</th>
             <th>Status</th>
+            <th> </th>
           </tr>
         </thead>
         <tbody>
           {missions.mission_id.map((mission, index) => (
             <tr key={mission}>
-              <th>{missions.mission_name[index]}</th>
-              <td>{missions.description[index]}</td>
-              <td>Not a member</td>
+              <th className="mission-name"><p>{missions.mission_name[index]}</p></th>
+              <td className="mission-description">{missions.description[index]}</td>
+              <td className="mission-status"><p>NOT A MEMBER</p></td>
+              <td className="mission-btn"><button type="button">Join Mission</button></td>
             </tr>
           ))}
         </tbody>
