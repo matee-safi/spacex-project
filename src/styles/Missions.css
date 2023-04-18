@@ -1,0 +1,77 @@
+.missions {
+  padding: 1em;
+}
+
+table {
+  background-color: silver;
+}
+
+thead {
+  text-align: left;
+}
+
+tr {
+  background-color: white;
+}
+
+thead tr th {
+  padding: 0.5em;
+  background-color: white;
+}
+
+.mission-name {
+  width: 10%;
+  text-align: left;
+  padding: 5px;
+}
+
+.mission-name p {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.mission-description {
+  width: 65%;
+  padding: 5px;
+  padding-bottom: 2em;
+}
+
+.mission-status {
+  width: 11%;
+  text-align: center;
+  padding: 5px;
+}
+
+.mission-status p {
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0 auto;
+}
+
+.mission-btn {
+  text-align: center;
+}
+
+.mission-btn button {
+  background-color: transparent;
+  font-size: 1em;
+  font-weight: bolder;
+  color: gray;
+  border: 2px solid gray;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.mission-btn button:hover {
+  background-color: gray;
+  color: white;
+}
+
+tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
