@@ -1,9 +1,11 @@
+import Nav from './components/Nav';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <h1>React Redux web app</h1>
+      <Nav />
     </div>
   );
 }
