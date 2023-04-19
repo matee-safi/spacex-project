@@ -1,0 +1,54 @@
+.rocketsMain {
+  padding: 3rem 9rem;
+}
+
+article {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.rckt-img {
+  width: 27%;
+}
+
+.articleMain {
+  padding-left: 1rem;
+}
+
+.rocket-title {
+  margin-block: 0 1rem;
+  font-size: 2.1rem;
+}
+
+.reserved-span {
+  margin-right: 0.9rem;
+  border-radius: 6px;
+  padding-inline: 0.5rem;
+  background-color: rgb(0, 178, 178);
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+.rocket-description {
+  font-size: 1.5rem;
+}
+
+.rsrv-btn {
+  background-color: #1783ef;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cancel-rsrv-btn {
+  background-color: #fff;
+  color: gray;
+  border: 1px solid black;
+}

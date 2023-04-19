@@ -25,10 +25,18 @@ const Missions = () => {
         <tbody>
           {missions.mission_id.map((mission, index) => (
             <tr key={mission}>
-              <th className="mission-name"><p>{missions.mission_name[index]}</p></th>
-              <td className="mission-description">{missions.description[index]}</td>
-              <td className="mission-status"><p>NOT A MEMBER</p></td>
-              <td className="mission-btn"><button type="button">Join Mission</button></td>
+              <th className="mission-name">
+                <p>{missions.mission_name[index]}</p>
+              </th>
+              <td className="mission-description">
+                {missions.description[index]}
+              </td>
+              <td className="mission-status">
+                <p>NOT A MEMBER</p>
+              </td>
+              <td className="mission-btn">
+                <button type="button">Join Mission</button>
+              </td>
             </tr>
           ))}
         </tbody>
