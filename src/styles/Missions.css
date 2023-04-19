@@ -153,3 +153,7 @@ tr:nth-child(odd) {
   font-weight: bold;
   color: maroon;
 }
+
+.active-member {
+  background-color: teal !important;
+}

@@ -7,6 +7,7 @@ const initialState = {
   missionId: [],
   missionName: [],
   description: [],
+  reserved: [],
 };
 
 export const getMissions = createAsyncThunk('missions/getMissions', async () => {
@@ -17,6 +18,8 @@ export const getMissions = createAsyncThunk('missions/getMissions', async () => 
     throw new Error(err);
   }
 });
+
+export const joinMission = ((missionId) => missionId);
 
 const missionsSlice = createSlice({
   name: 'missions',
@@ -32,11 +35,15 @@ const missionsSlice = createSlice({
           state.missionId = action.payload.map((mission) => mission.mission_id);
           state.missionName = action.payload.map((mission) => mission.mission_name);
           state.description = action.payload.map((mission) => mission.description);
+          state.reserved = action.payload.map((mission) => mission.reserved);
         }
       })
       .addCase(getMissions.rejected, (state) => {
         state.isPending = false;
         state.error = 'OOPS! An error has occurred while getting data';
+      })
+      .addCase(joinMission.fulfilled, (action) => {
+        console.log(action.payload);
       });
   },
 });

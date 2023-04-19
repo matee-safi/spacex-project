@@ -1,17 +1,21 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMissions } from '../redux/missions/missionsSlice';
+import { getMissions, joinMission } from '../redux/missions/missionsSlice';
 import '../styles/Missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
   const {
-    error, missionId, isPending, missionName, description,
+    error, missionId, isPending, missionName, description, reserved,
   } = useSelector((state) => state.missions);
 
   useEffect(() => {
     dispatch(getMissions());
   }, []);
+
+  const handleJoin = (e) => {
+    dispatch(joinMission(e.target.id));
+  };
 
   return (
     <div className="missions">
@@ -45,8 +49,8 @@ const Missions = () => {
             <tr key={mission}>
               <th className="mission-name"><p>{missionName[index]}</p></th>
               <td className="mission-description">{description[index]}</td>
-              <td className="mission-status"><p>NOT A MEMBER</p></td>
-              <td className="mission-btn"><button type="button">Join Mission</button></td>
+              <td className="mission-status">{reserved[index] ? <p className="active-member">Active</p> : <p>NOT A MEMBER</p>}</td>
+              <td className="mission-btn"><button id={mission} type="button" onClick={(e) => handleJoin(e)}>Join Mission</button></td>
             </tr>
           ))}
         </tbody>
