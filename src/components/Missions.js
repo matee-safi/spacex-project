@@ -6,7 +6,7 @@ import '../styles/Missions.css';
 const Missions = () => {
   const dispatch = useDispatch();
   const {
-    missionId, isPending, missionName, description,
+    error, missionId, isPending, missionName, description,
   } = useSelector((state) => state.missions);
 
   useEffect(() => {
@@ -28,6 +28,7 @@ const Missions = () => {
         </div>
       </div>
       )}
+      {error && <p className="error">{error}</p>}
       {missionId.length > 0
       && (
       <table>
@@ -51,7 +52,6 @@ const Missions = () => {
         </tbody>
       </table>
       )}
-      {missionId === null && <p>An error has occurred while getting data</p>}
     </div>
   );
 };
