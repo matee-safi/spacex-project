@@ -5,7 +5,9 @@ import '../styles/Missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const missions = useSelector((state) => state.missions);
+  const {
+    missionId, isPending, missionName, description,
+  } = useSelector((state) => state.missions);
 
   useEffect(() => {
     dispatch(getMissions());
@@ -13,6 +15,21 @@ const Missions = () => {
 
   return (
     <div className="missions">
+      {isPending
+      && (
+      <div className="loading">
+        <div className="sk-chase">
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
+          <div className="sk-chase-dot" />
+        </div>
+      </div>
+      )}
+      {missionId.length > 0
+      && (
       <table>
         <thead>
           <tr>
@@ -23,16 +40,18 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {missions.mission_id.map((mission, index) => (
+          {missionId.map((mission, index) => (
             <tr key={mission}>
-              <th className="mission-name"><p>{missions.mission_name[index]}</p></th>
-              <td className="mission-description">{missions.description[index]}</td>
+              <th className="mission-name"><p>{missionName[index]}</p></th>
+              <td className="mission-description">{description[index]}</td>
               <td className="mission-status"><p>NOT A MEMBER</p></td>
               <td className="mission-btn"><button type="button">Join Mission</button></td>
             </tr>
           ))}
         </tbody>
       </table>
+      )}
+      {missionId === null && <p>An error has occurred while getting data</p>}
     </div>
   );
 };
