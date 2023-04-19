@@ -7,50 +7,56 @@ const Missions = () => {
   const dispatch = useDispatch();
   const {
     error, missionId, isPending, missionName, description,
-  } = useSelector((state) => state.missions);
+  } = useSelector(
+    (state) => state.missions,
+  );
 
   useEffect(() => {
     dispatch(getMissions());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="missions">
-      {isPending
-      && (
-      <div className="loading">
-        <div className="sk-chase">
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
+      {isPending && (
+        <div className="loading">
+          <div className="sk-chase">
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+          </div>
         </div>
-      </div>
       )}
       {error && <p className="error">{error}</p>}
-      {missionId.length > 0
-      && (
-      <table>
-        <thead>
-          <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th> </th>
-          </tr>
-        </thead>
-        <tbody>
-          {missionId.map((mission, index) => (
-            <tr key={mission}>
-              <th className="mission-name"><p>{missionName[index]}</p></th>
-              <td className="mission-description">{description[index]}</td>
-              <td className="mission-status"><p>NOT A MEMBER</p></td>
-              <td className="mission-btn"><button type="button">Join Mission</button></td>
+      {missionId.length > 0 && (
+        <table>
+          <thead>
+            <tr>
+              <th>Mission</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th> </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {missionId.map((mission, index) => (
+              <tr key={mission}>
+                <th className="mission-name">
+                  <p>{missionName[index]}</p>
+                </th>
+                <td className="mission-description">{description[index]}</td>
+                <td className="mission-status">
+                  <p>NOT A MEMBER</p>
+                </td>
+                <td className="mission-btn">
+                  <button type="button">Join Mission</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );

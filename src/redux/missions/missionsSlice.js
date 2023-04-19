@@ -9,14 +9,17 @@ const initialState = {
   description: [],
 };
 
-export const getMissions = createAsyncThunk('missions/getMissions', async () => {
-  try {
-    const response = await axios('https://api.spacexdata.com/v3/missions');
-    return response.data;
-  } catch (err) {
-    throw new Error(err);
-  }
-});
+export const getMissions = createAsyncThunk(
+  'missions/getMissions',
+  async () => {
+    try {
+      const response = await axios('https://api.spacexdata.com/v3/missions');
+      return response.data;
+    } catch (err) {
+      throw new Error(err);
+    }
+  },
+);
 
 const missionsSlice = createSlice({
   name: 'missions',
@@ -30,8 +33,12 @@ const missionsSlice = createSlice({
         state.isPending = false;
         if (action.payload.length > 0) {
           state.missionId = action.payload.map((mission) => mission.mission_id);
-          state.missionName = action.payload.map((mission) => mission.mission_name);
-          state.description = action.payload.map((mission) => mission.description);
+          state.missionName = action.payload.map(
+            (mission) => mission.mission_name,
+          );
+          state.description = action.payload.map(
+            (mission) => mission.description,
+          );
         }
       })
       .addCase(getMissions.rejected, (state) => {
