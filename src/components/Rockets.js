@@ -17,11 +17,13 @@ const Rockets = () => {
       {error && <p>{error}</p>}
       {rockets.map((rocket) => (
         <article key={rocket.id}>
-          <img
-            src={rocket.flickr_images[0]}
-            alt={rocket.name}
-            className="rckt-img"
-          />
+          <div className="imgContainer">
+            <img
+              src={rocket.flickr_images[0]}
+              alt={rocket.name}
+              className="rckt-img"
+            />
+          </div>
           <main className="articleMain">
             <h1 className="rocket-title">{rocket.name}</h1>
             <p className="rocket-description">
