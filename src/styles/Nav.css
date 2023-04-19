@@ -4,11 +4,12 @@ nav {
   justify-content: space-between;
   background: linear-gradient(150deg, purple, teal);
   align-items: center;
+  height: 70px;
 }
 
 nav img {
-  width: 90px;
-  height: 90px;
+  width: 70px;
+  height: 70px;
 }
 
 nav div {
@@ -16,12 +17,13 @@ nav div {
   gap: 2rem;
   font-size: 1.5rem;
   color: white;
+  align-items: center;
 }
 
 ul {
   display: flex;
   gap: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 li {
