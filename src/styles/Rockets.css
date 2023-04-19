@@ -8,7 +8,8 @@ article {
 }
 
 .imgContainer {
-  flex: 1;
+  min-width: 21rem;
+  max-width: 21rem;
 }
 
 .rckt-img {
@@ -17,7 +18,6 @@ article {
 }
 
 .articleMain {
-  flex: 3;
   padding-left: 1rem;
 }
 
