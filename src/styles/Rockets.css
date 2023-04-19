@@ -6,6 +6,7 @@ article {
   display: flex;
   margin-bottom: 3rem;
 }
+
 .imgContainer {
   flex: 1;
 }
