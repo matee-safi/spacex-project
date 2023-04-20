@@ -42,7 +42,6 @@ const missionsSlice = createSlice({
           state.missionId = action.payload.map((mission) => mission.mission_id);
           state.missionName = action.payload.map((mission) => mission.mission_name);
           state.description = action.payload.map((mission) => mission.description);
-          state.reserved = action.payload.map((mission) => mission.reserved);
         }
       })
       .addCase(getMissions.rejected, (state) => {
