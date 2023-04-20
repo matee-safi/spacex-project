@@ -10,14 +10,17 @@ const initialState = {
   reserved: [],
 };
 
-export const getMissions = createAsyncThunk('missions/getMissions', async () => {
-  try {
-    const response = await axios('https://api.spacexdata.com/v3/missions');
-    return response.data;
-  } catch (err) {
-    throw new Error(err);
-  }
-});
+export const getMissions = createAsyncThunk(
+  'missions/getMissions',
+  async () => {
+    try {
+      const response = await axios('https://api.spacexdata.com/v3/missions');
+      return response.data;
+    } catch (err) {
+      throw new Error(err);
+    }
+  },
+);
 
 const missionsSlice = createSlice({
   name: 'missions',
