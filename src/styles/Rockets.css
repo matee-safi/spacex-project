@@ -43,14 +43,17 @@ article {
   font-size: 1rem;
 }
 
+button {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 .rsrv-btn {
   background-color: #1783ef;
   color: #fff;
-  padding: 0.6rem 1rem;
-  border-radius: 0.5rem;
   border: none;
-  font-size: 1rem;
-  cursor: pointer;
 }
 
 .cancel-rsrv-btn {
