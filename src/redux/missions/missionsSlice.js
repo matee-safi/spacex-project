@@ -19,11 +19,16 @@ export const getMissions = createAsyncThunk('missions/getMissions', async () => 
   }
 });
 
-export const joinMission = ((missionId) => missionId);
-
 const missionsSlice = createSlice({
   name: 'missions',
   initialState,
+  reducers: {
+    joinMission: (state, action) => {
+      const mission = state.missionId.indexOf(action.payload);
+      state.reserved[mission] = !state.reserved[mission];
+      // console.log(state.description[mission]);
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getMissions.pending, (state) => {
@@ -41,11 +46,10 @@ const missionsSlice = createSlice({
       .addCase(getMissions.rejected, (state) => {
         state.isPending = false;
         state.error = 'OOPS! An error has occurred while getting data';
-      })
-      .addCase(joinMission.fulfilled, (action) => {
-        console.log(action.payload);
       });
   },
 });
+
+export const { joinMission } = missionsSlice.actions;
 
 export default missionsSlice.reducer;

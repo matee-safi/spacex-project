@@ -15,6 +15,8 @@ const Missions = () => {
 
   const handleJoin = (e) => {
     dispatch(joinMission(e.target.id));
+    if (e.target.parentNode.className === 'leave-btn') e.target.parentNode.className = 'join-btn';
+    else e.target.parentNode.className = 'leave-btn';
   };
 
   return (
@@ -49,8 +51,8 @@ const Missions = () => {
             <tr key={mission}>
               <th className="mission-name"><p>{missionName[index]}</p></th>
               <td className="mission-description">{description[index]}</td>
-              <td className="mission-status">{reserved[index] ? <p className="active-member">Active</p> : <p>NOT A MEMBER</p>}</td>
-              <td className="mission-btn"><button id={mission} type="button" onClick={(e) => handleJoin(e)}>Join Mission</button></td>
+              <td className="mission-status">{reserved[index] ? <p className="active-member">Active Member</p> : <p>NOT A MEMBER</p>}</td>
+              <td className="join-btn"><button id={mission} type="button" onClick={(e) => handleJoin(e)}>{reserved[index] ? 'Leave Mission' : 'Join Mission'}</button></td>
             </tr>
           ))}
         </tbody>

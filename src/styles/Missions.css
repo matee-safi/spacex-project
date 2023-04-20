@@ -52,11 +52,23 @@ thead tr th {
   margin: 0 auto;
 }
 
-.mission-btn {
+.leave-btn {
   text-align: center;
 }
 
-.mission-btn button {
+.leave-btn button {
+  background-color: transparent;
+  color: red;
+  font-size: 1em;
+  font-weight: bolder;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.join-btn button {
   background-color: transparent;
   font-size: 1em;
   font-weight: bolder;
@@ -67,9 +79,18 @@ thead tr th {
   transition: 0.2s;
 }
 
-.mission-btn button:hover {
+.join-btn button:hover {
   background-color: #198754;
   color: white;
+}
+
+.leave-btn button:hover {
+  background-color: red;
+  color: white;
+}
+
+.join-btn {
+  text-align: center;
 }
 
 tr:nth-child(odd) {
