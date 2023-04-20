@@ -26,7 +26,6 @@ const missionsSlice = createSlice({
     joinMission: (state, action) => {
       const mission = state.missionId.indexOf(action.payload);
       state.reserved[mission] = !state.reserved[mission];
-      // console.log(state.description[mission]);
     },
   },
   extraReducers: (builder) => {
