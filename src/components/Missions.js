@@ -11,7 +11,7 @@ const Missions = () => {
 
   useEffect(() => {
     dispatch(getMissions());
-  }, []);
+  }, [dispatch]);
 
   const handleJoin = (e) => {
     dispatch(joinMission(e.target.id));
@@ -21,18 +21,17 @@ const Missions = () => {
 
   return (
     <div className="missions">
-      {isPending
-      && (
-      <div className="loading">
-        <div className="sk-chase">
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
-          <div className="sk-chase-dot" />
+      {isPending && (
+        <div className="loading">
+          <div className="sk-chase">
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+            <div className="sk-chase-dot" />
+          </div>
         </div>
-      </div>
       )}
       {error && <p className="error">{error}</p>}
       {missionId.length > 0
@@ -54,9 +53,24 @@ const Missions = () => {
               <td className="mission-status">{reserved[index] ? <p className="active-member">Active Member</p> : <p>NOT A MEMBER</p>}</td>
               <td className="join-btn"><button id={mission} type="button" onClick={(e) => handleJoin(e)}>{reserved[index] ? <>Leave Mission</> : <>Join Mission</>}</button></td>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {missionId.map((mission, index) => (
+              <tr key={mission}>
+                <th className="mission-name">
+                  <p>{missionName[index]}</p>
+                </th>
+                <td className="mission-description">{description[index]}</td>
+                <td className="mission-status">
+                  <p>NOT A MEMBER</p>
+                </td>
+                <td className="mission-btn">
+                  <button type="button">Join Mission</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );
