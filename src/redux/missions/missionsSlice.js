@@ -4,9 +4,7 @@ import axios from 'axios';
 const initialState = {
   isPending: false,
   error: '',
-  missionId: [],
-  missionName: [],
-  description: [],
+  missions: [],
 };
 
 export const getMissions = createAsyncThunk(
@@ -24,22 +22,58 @@ export const getMissions = createAsyncThunk(
 const missionsSlice = createSlice({
   name: 'missions',
   initialState,
+  reducers: {
+    joinMission: (state, action) => {
+      const id = action.payload;
+      const newState = state.missions.map((mission) => {
+        if (mission.mission_id === id) {
+          return { ...mission, reserved: !mission.reserved };
+        }
+        return mission;
+      });
+      return {
+        ...state,
+        missions: newState,
+      };
+    },
+    leaveMission: (state, action) => {
+      const id = action.payload;
+      const newState = state.missions.map((mission) => {
+        if (mission.mission_id === id) {
+          return { ...mission, reserved: !mission.reserved };
+        }
+        return mission;
+      });
+      return {
+        ...state,
+        missions: newState,
+      };
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getMissions.pending, (state) => {
         state.isPending = true;
       })
       .addCase(getMissions.fulfilled, (state, action) => {
-        state.isPending = false;
-        if (action.payload.length > 0) {
-          state.missionId = action.payload.map((mission) => mission.mission_id);
-          state.missionName = action.payload.map(
-            (mission) => mission.mission_name,
-          );
-          state.description = action.payload.map(
-            (mission) => mission.description,
-          );
-        }
+        const [mission1, mission2, mission3, mission4, mission5,
+          mission6, mission7, mission8, mission9, mission10] = action.payload;
+        return {
+          ...state,
+          isPending: false,
+          missions: [
+            { ...mission1, reserved: false },
+            { ...mission2, reserved: false },
+            { ...mission3, reserved: false },
+            { ...mission4, reserved: false },
+            { ...mission5, reserved: false },
+            { ...mission6, reserved: false },
+            { ...mission7, reserved: false },
+            { ...mission8, reserved: false },
+            { ...mission9, reserved: false },
+            { ...mission10, reserved: false },
+          ],
+        };
       })
       .addCase(getMissions.rejected, (state) => {
         state.isPending = false;
@@ -47,5 +81,7 @@ const missionsSlice = createSlice({
       });
   },
 });
+
+export const { joinMission, leaveMission } = missionsSlice.actions;
 
 export default missionsSlice.reducer;
