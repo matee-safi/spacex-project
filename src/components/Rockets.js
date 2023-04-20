@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import {
   fetchRockets,
   reserveRocket,
-  cancellReserve,
+  cancelReserve,
 } from '../redux/rockets/rocketsSlice';
 import '../styles/Rockets.css';
 
@@ -20,8 +20,8 @@ const Rockets = () => {
     dispatch(reserveRocket(id));
   };
 
-  const handleCancell = (id) => {
-    dispatch(cancellReserve(id));
+  const handleCancel = (id) => {
+    dispatch(cancelReserve(id));
   };
 
   return (
@@ -56,7 +56,7 @@ const Rockets = () => {
             )}
             {rocket.reserved && (
               <button
-                onClick={() => handleCancell(rocket.id)}
+                onClick={() => handleCancel(rocket.id)}
                 className="cancel-rsrv-btn"
                 type="button"
               >
