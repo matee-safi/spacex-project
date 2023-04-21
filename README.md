@@ -9,7 +9,6 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
-  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -63,14 +62,6 @@
 
  - You can join missions and leave any time you want
  - You can reserve rockets and cancel any time you want
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-> Not available yet (will be available after this branch is merged)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
