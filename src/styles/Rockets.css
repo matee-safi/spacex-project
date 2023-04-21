@@ -1,0 +1,63 @@
+.rocketsMain {
+  padding: 3rem 9rem;
+}
+
+article {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+.imgContainer {
+  min-width: 21rem;
+  max-width: 21rem;
+}
+
+.rckt-img {
+  width: 100%;
+  height: 100%;
+}
+
+.articleMain {
+  padding-left: 1rem;
+}
+
+.rocket-title {
+  margin-block: 0 1rem;
+  font-size: 1.8rem;
+}
+
+.reserved-span {
+  margin-right: 0.9rem;
+  border-radius: 6px;
+  padding-inline: 0.5rem;
+  background-color: rgb(0, 178, 178);
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+.rocket-description {
+  font-size: 1rem;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.rsrv-btn {
+  background-color: #1783ef;
+  color: #fff;
+  border: none;
+}
+
+.cancel-rsrv-btn {
+  background-color: #fff;
+  color: gray;
+  border: 1px solid black;
+}

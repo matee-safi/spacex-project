@@ -1,0 +1,13 @@
+.myProfileMain {
+  display: flex;
+  padding: 0 6rem;
+}
+
+.missionsSection {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.rocketsSection {
+  flex: 1;
+}
