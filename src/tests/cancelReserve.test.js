@@ -1,4 +1,3 @@
-//Tests the cancelReserve function to update the state of the rockets array to {reserved:false} when the cancelReserve action is dispatched.
 import { cancelReserve } from '../redux/rockets/rocketsSlice';
 
 describe('cancelReserve', () => {
