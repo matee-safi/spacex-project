@@ -9,6 +9,7 @@
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -62,6 +63,14 @@
 
  - You can join missions and leave any time you want
  - You can reserve rockets and cancel any time you want
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+<p>You can view the page live by clicking <a href="https://space-x-0vco.onrender.com">this link</a></p>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
